@@ -19,9 +19,9 @@ test('encrypts lowercase word with no punctuation and shift of 1', () => {
     expect(actual).toEqual(expected);
 })
 
-test('works with shift value bigger than 1', () => {
-    let expected = 'CDEFGHIJKLMNOPQRSTUVWXYZAB';
-    let actual = caesarCipher('abcdefghijklmnopqrstuvwxyz', 2);
+test('able to wrap from z to a', () => {
+    let expected = 'YZA';
+    let actual = caesarCipher('xyz', 1);
     expect(actual).toEqual(expected);
 })
 
@@ -37,12 +37,20 @@ test('works with uppercase AND lowercase', () => {
     expect(actual).toEqual(expected);
 })
 
-// test('works with shift value bigger than string length', () => {
-//     let expected = 
-// })
+test('works with spaces', () => {
+    let expected = 'B C D';
+    let actual = caesarCipher('a b c', 1);
+    expect(actual).toEqual(expected);
+})
 
-test.skip('encrypts word with punctuation', () => {
-    let expected = 'IFMMP?';
+test('works with shift value bigger than string length', () => {
+    let expected = 'IJKLMNOPQRSTUVWXYZABCDEFGH';
+    let actual = caesarCipher('abcdefghijklmnopqrstuvwxyz', 60);
+    expect(actual).toEqual(expected);
+})
+
+test('ignores punctuation', () => {
+    let expected = 'IFMMP,';
     let actual = caesarCipher('hello,', 1);
     expect(actual).toEqual(expected);
 })
