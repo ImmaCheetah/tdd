@@ -54,3 +54,7 @@ test('ignores punctuation', () => {
     let actual = caesarCipher('hello,', 1);
     expect(actual).toEqual(expected);
 })
+
+test('works with negative shift', () => {
+    expect(caesarCipher('hello', -2)).toEqual('FCJJM');
+})

@@ -28,12 +28,4 @@ function caesarCipher(string, shiftValue) {
     return cipherText;
 }
 
-// console.log(caesarCipher('abCDEFGHIJKLMNOPQRSTUVWXYZ', 2));
-// console.log('A'.charCodeAt(0));
-
-// create alphabet array
-// use shift value to loop through alphabet array and add value to each index and store that letter 
-// for encryption convert string to array
-// take first letter and search in alphabet, when found use same index from cipher array
-
 export {caesarCipher}
